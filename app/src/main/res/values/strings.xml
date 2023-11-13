@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">TestMovieDB</string>
+
+    <string name="tab_profile">Profile</string>
+    <string name="tab_movie">Movies</string>
+    <string name="tab_maps">Maps</string>
+    <string name="tab_storage">Storage</string>
+
+    <string name="movie_title">Movies Populate</string>
+    <string name="movie_title_rated">Movies Top Rade</string>
+    <string name="maps_title">Time Zones</string>
+    <string name="storage_title">Upload Image</string>
+
+    <string name="my_profile">Personal Info</string>
+    <string name="name_profile">Emilia Clarke</string>
+    <string name="know_profile_label">Known For</string>
+    <string name="know_profile">Acting</string>
+    <string name="credits_profile_label">Known Credits</string>
+    <string name="credits_profile">36</string>
+    <string name="gender_profile_label">Gender</string>
+    <string name="gender_profile">Female</string>
+    <string name="birthday_profile_label">Birthday</string>
+    <string name="birthday_profile">1986-10-23 (37 years old)</string>
+    <string name="place_profile_label">Place of Birth</string>
+    <string name="place_profile">London, England, UK</string>
+
+    <string name="error_read_firestore">Get failed with</string>
+    <string name="storage_resume">Cloud Storage para Firebase es un servicio de almacenamiento de objetos potente, simple y rentable construido para el escalamiento de Google. Los SDK de Firebase para Cloud Storage agregan la seguridad de Google a las operaciones de carga y descarga de archivos de tus apps de Firebase, sin importar la calidad de la red.</string>
+    <string name="upload">Subir imagen</string>
+    <string name="storage_toast">Image has been successfully uploaded to the fireStorage.</string>
+
+    <string name="error_write_firestore">Error writing document</string>
+    <string name="success_write_firestore">DocumentSnapshot successfully written!</string>
+
+</resources>

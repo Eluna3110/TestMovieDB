@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "537785426121",
+    "project_id": "testmoviedb-c1650",
+    "storage_bucket": "testmoviedb-c1650.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537785426121:android:afd22c2836b1159f42ad18",
+        "android_client_info": {
+          "package_name": "com.software.testmoviedb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI0p9-755Hu5MciiQcmRFtwfS6cx-SFmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

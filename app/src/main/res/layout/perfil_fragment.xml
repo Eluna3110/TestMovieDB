@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/margin_big">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_normal">
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/my_profile"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/sp_16"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_profile_image"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_movie"
+                    style="@style/AppTheme.CardView.Basic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_profile" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/cl_profile_image"
+                android:text="@string/name_profile"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/sp_16"/>
+
+
+            <TextView
+                android:id="@+id/label_know_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/label_name"
+                android:text="@string/know_profile_label"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/sp_14"/>
+
+            <TextView
+                android:id="@+id/label_know"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_min"
+                app:layout_constraintTop_toBottomOf="@id/label_know_txt"
+                android:text="@string/know_profile"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/sp_14"/>
+
+            <TextView
+                android:id="@+id/label_birthday_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/label_know"
+                android:text="@string/birthday_profile_label"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/sp_14"/>
+
+            <TextView
+                android:id="@+id/label_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_min"
+                app:layout_constraintTop_toBottomOf="@id/label_birthday_txt"
+                android:text="@string/birthday_profile"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/sp_14"/>
+
+            <TextView
+                android:id="@+id/label_place_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layout_constraintTop_toBottomOf="@id/label_birthday"
+                android:text="@string/place_profile_label"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/sp_14"/>
+
+            <TextView
+                android:id="@+id/label_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_min"
+                app:layout_constraintTop_toBottomOf="@id/label_place_txt"
+                android:text="@string/place_profile"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/sp_14"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/label_place"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/item_rating_movie" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.software.testmoviedb.domain.model.ProfileMovieRating" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_normal"
+        android:layout_margin="@dimen/margin_min"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_movie"
+            android:layout_width="@dimen/dp_112"
+            android:layout_height="160dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_movie"
+                style="@style/AppTheme.CardView.Basic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_min"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:background="@drawable/ic_example" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_marginStart="@dimen/margin_min"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:id="@+id/name_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/cl_movie"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{movie.nameMovie}"
+            tools:text="Elemental" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_marginStart="@dimen/margin_min"
+            android:layout_marginTop="@dimen/margin_min"
+            android:id="@+id/minutes_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/cl_movie"
+            app:layout_constraintTop_toBottomOf="@id/name_movie"
+            android:text="@{movie.genderMovie}"
+            tools:text="Drama, Romance, 1h 50m" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:numStars="5"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:progressBackgroundTint="@color/purple_200"
+            android:progressTint="@color/purple"
+            app:layout_constraintStart_toEndOf="@id/cl_movie"
+            app:layout_constraintTop_toBottomOf="@id/minutes_movie" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
