@@ -1,6 +1,8 @@
 package com.software.testmoviedb.presentation.perfil.view
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +17,7 @@ class ProfileFragment : Fragment()
     private lateinit var binding: PerfilFragmentBinding
     private lateinit var adapter : ProfileAdapterRating
     private val viewModel: ProfileViewModel  by viewModels()
-
+    val handler = Handler(Looper.getMainLooper())
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,6 +33,16 @@ class ProfileFragment : Fragment()
         super.onViewCreated(view, savedInstanceState)
         viewModel.model.observe(viewLifecycleOwner, Observer(::updateUI))
         viewModel.setUpView()
+
+        handler.postDelayed(object : Runnable {
+            override fun run() {
+                val person = viewModel.getPersonRandom()
+                binding.person = person
+                binding.imageView.setBackgroundResource(person.imageProfile)
+
+                handler.postDelayed(this, 5000)
+            }
+        }, 5000)
     }
 
     private fun updateUI(model: ProfileViewModel.UiModel) {

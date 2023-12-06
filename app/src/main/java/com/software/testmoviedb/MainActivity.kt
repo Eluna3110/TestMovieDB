@@ -15,6 +15,7 @@ import com.software.testmoviedb.domain.model.LocationPhone
 import dagger.hilt.android.AndroidEntryPoint
 import android.Manifest
 import android.location.Location
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import java.util.Date
 
 @AndroidEntryPoint
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         setContentView(R.layout.main_activity)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)

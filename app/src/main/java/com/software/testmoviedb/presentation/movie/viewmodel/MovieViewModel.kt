@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.software.testmoviedb.BuildConfig
 import com.software.testmoviedb.domain.model.Movie
 import com.software.testmoviedb.domain.usecase.GetMoviePopulate
 import com.software.testmoviedb.domain.usecase.GetMovieTopRade
@@ -33,8 +34,8 @@ class MovieViewModel @Inject constructor(private val getMoviePopulate: GetMovieP
 
     fun setUpView() = viewModelScope.launch {
         _model.value = UiModel.MovieContent(
-            getMoviePopulate.invoke(page = 1, apiKey = "f1cca3de1acdb7a36b961de832f21eb3", language = "en-US"),
-            getMovieTopRade.invoke(page = 2, apiKey = "f1cca3de1acdb7a36b961de832f21eb3", language = "en-US")
+            getMoviePopulate.invoke(page = 1, apiKey = BuildConfig.API_KEY, language = "en-US"),
+            getMovieTopRade.invoke(page = 2, apiKey = BuildConfig.API_KEY, language = "en-US")
         )
     }
 

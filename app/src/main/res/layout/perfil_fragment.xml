@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="person"
+            type="com.software.testmoviedb.domain.model.Person" />
+    </data>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -47,7 +53,7 @@
                         android:id="@+id/imageView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/ic_profile" />
+                        android:background="@drawable/ic_emilia" />
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -60,7 +66,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="@dimen/margin_normal"
                 app:layout_constraintTop_toBottomOf="@id/cl_profile_image"
-                android:text="@string/name_profile"
+                android:text="@{person.namePerson}"
                 android:textStyle="bold"
                 android:textColor="@color/purple"
                 android:textSize="@dimen/sp_16"/>
@@ -85,7 +91,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="@dimen/margin_min"
                 app:layout_constraintTop_toBottomOf="@id/label_know_txt"
-                android:text="@string/know_profile"
+                android:text="@{person.knowFor}"
                 android:textColor="@color/purple"
                 android:textSize="@dimen/sp_14"/>
 
@@ -108,7 +114,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="@dimen/margin_min"
                 app:layout_constraintTop_toBottomOf="@id/label_birthday_txt"
-                android:text="@string/birthday_profile"
+                android:text="@{person.birthday}"
                 android:textColor="@color/purple"
                 android:textSize="@dimen/sp_14"/>
 
@@ -131,7 +137,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="@dimen/margin_min"
                 app:layout_constraintTop_toBottomOf="@id/label_place_txt"
-                android:text="@string/place_profile"
+                android:text="@{person.placeBirthday}"
                 android:textColor="@color/purple"
                 android:textSize="@dimen/sp_14"/>
 

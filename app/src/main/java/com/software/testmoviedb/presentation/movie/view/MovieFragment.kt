@@ -33,10 +33,10 @@ class MovieFragment : Fragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        moviePopularAdapter = MovieAdapter(emptyList(), requireContext())
+        moviePopularAdapter = MovieAdapter(requireContext())
         binding.rvPopular.adapter = moviePopularAdapter
 
-        movieTopRadeAdapter = MovieAdapter(emptyList(), requireContext())
+        movieTopRadeAdapter = MovieAdapter(requireContext())
         binding.rvRated.adapter = movieTopRadeAdapter
 
         viewModel.getDefaultUiModel()
@@ -53,16 +53,16 @@ class MovieFragment : Fragment()
             }
             is MovieViewModel.UiModel.MovieContent -> {
                 if (model.moviePopulate.isNotEmpty()) {
-                    moviePopularAdapter.updateDataSet(model.moviePopulate)
-                    movieTopRadeAdapter.updateDataSet(model.movieTopRade)
+                    moviePopularAdapter.submitList(model.moviePopulate)
+                    movieTopRadeAdapter.submitList(model.movieTopRade)
                 }else {
                     viewModel.getInfoLocal()
                 }
             }
             is MovieViewModel.UiModel.MovieContentLocal -> {
                 if (model.moviePopulate.isNotEmpty()) {
-                    moviePopularAdapter.updateDataSet(model.moviePopulate)
-                    movieTopRadeAdapter.updateDataSet(model.movieTopRade)
+                    moviePopularAdapter.submitList(model.moviePopulate)
+                    movieTopRadeAdapter.submitList(model.movieTopRade)
                 }
             }
         }
